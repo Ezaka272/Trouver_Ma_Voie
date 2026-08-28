@@ -1,0 +1,12 @@
+{
+  "name": "taxibenav",
+  "version": "2.0.0",
+  "description": "TaxiBe - navigation et gestion des lignes de taxi-bus",
+  "main": "server.js",
+  "scripts": {"start":"node server.js","dev":"nodemon server.js"},
+  "keywords": ["taxibe","madagascar","transport"],
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {"cors":"^2.8.6","dotenv":"^17.4.2","express":"^5.2.1","mysql2":"^3.23.2"},
+  "devDependencies": {"nodemon":"^3.1.14"}
+}

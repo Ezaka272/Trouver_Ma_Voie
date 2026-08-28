@@ -1,0 +1,11 @@
+const express=require("express"); 
+const router=express.Router(); 
+const C=require("../controllers/arretController"); 
+const {requireAdmin}=require("../middlewares/auth");
+router.get("/",C.getAll); router.get("/search",C.search); 
+router.get("/ligne/:ligneId",C.getByLigne); 
+router.get("/:id",C.getById); 
+router.post("/",requireAdmin,C.create); 
+router.put("/:id",requireAdmin,C.update); 
+router.delete("/:id",requireAdmin,C.remove); 
+module.exports=router;
