@@ -1,5 +1,0 @@
-const express=require("express"); const db=require("../config/db"); const {requireAuth}=require("../middlewares/auth"); const router=express.Router();
-router.get("/",requireAuth,async(req,res,next)=>{try{const [rows]=await db.query(`SELECT f.ligne_id,l.numero,l.depart,l.destination,l.prix,l.temps,l.couleur FROM favoris f JOIN ligne l ON l.id=f.ligne_id WHERE f.utilisateur_id=? ORDER BY f.created_at DESC`,[req.user.id]);res.json(rows)}catch(e){next(e)}});
-router.post("/:ligneId",requireAuth,async(req,res,next)=>{try{await db.query("INSERT IGNORE INTO favoris(utilisateur_id,ligne_id) VALUES(?,?)",[req.user.id,req.params.ligneId]);res.json({favorite:true})}catch(e){next(e)}});
-router.delete("/:ligneId",requireAuth,async(req,res,next)=>{try{await db.query("DELETE FROM favoris WHERE utilisateur_id=? AND ligne_id=?",[req.user.id,req.params.ligneId]);res.json({favorite:false})}catch(e){next(e)}});
-router.get("/check/:ligneId",requireAuth,async(req,res,next)=>{try{const [r]=await db.query("SELECT id FROM favoris WHERE utilisateur_id=? AND ligne_id=?",[req.user.id,req.params.ligneId]);res.json({favorite:!!r.length})}catch(e){next(e)}}); module.exports=router;
