@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxiBe | Connexion Administrateur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../auth/auth.css">
+    <link rel="stylesheet" href="/assets/css/settings-theme.css">
+    <script src="/assets/js/i18n.js" defer></script>
+</head>
+<body class="auth-body admin-login-body">
+
+<main class="auth-card admin-auth-card">
+    <a class="auth-logo" href="../index.html">
+        <i class="fa-solid fa-bus"></i> Trouver Ma Voie
+    </a>
+
+    <div class="admin-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        Espace administration
+    </div>
+
+    <h1>Connexion administrateur</h1>
+    <p>Connectez-vous pour accéder au Dashboard Trouver Ma Voie.</p>
+
+    <form id="loginForm">
+        <label for="email">Email administrateur</label>
+        <input id="email" name="email" type="email" placeholder="admin@taxibe.mg" required autocomplete="username">
+
+        <label for="password">Mot de passe</label>
+        <div class="password-field">
+            <input id="password" name="password" type="password" placeholder="Votre mot de passe" required autocomplete="current-password">
+            <button type="button" id="togglePassword" aria-label="Afficher le mot de passe">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+
+        <button type="submit">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Se connecter à l'administration
+        </button>
+    </form>
+
+    <p id="message" class="auth-message"></p>
+
+    <a class="secondary-auth-link" href="/auth/login.html">
+        <i class="fa-solid fa-user"></i>
+        Connexion voyageur
+    </a>
+
+    <a class="back-home" href="/index.html">
+        <i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+    </a>
+</main>
+
+<script src="/auth/auth.js"></script>
+</body>
+</html>
