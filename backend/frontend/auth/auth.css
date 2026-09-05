@@ -1,0 +1,71 @@
+.auth-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:#f4f7fa}.auth-card{width:min(440px,100%);background:#fff;padding:35px;border-radius:22px;box-shadow:0 15px 40px rgba(0,0,0,.1)}.auth-logo{display:inline-flex;gap:10px;color:#16C65B;text-decoration:none;font-size:26px;font-weight:700;margin-bottom:25px}.auth-card h1{margin-bottom:8px}.auth-card>p{color:#777;margin-bottom:22px}.auth-card form{display:grid;gap:16px}.auth-card label{display:grid;gap:7px;font-weight:600}.auth-card input{padding:13px;border:1px solid #ddd;border-radius:10px;font:inherit}.auth-card button{border:0;background:#16C65B;color:#fff;padding:14px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}.auth-card a:not(.auth-logo){color:#16C65B}.auth-message{min-height:24px;margin:12px 0!important;color:#d33!important}
+/* ================================
+   CONNEXION ADMIN
+================================ */
+.admin-login-body {
+    background: #f4f7fa;
+}
+
+.admin-auth-card {
+    max-width: 460px;
+}
+
+.admin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #e8f9ef;
+    color: #16c65b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #777;
+    box-shadow: none;
+}
+
+#togglePassword:hover {
+    transform: translateY(-50%);
+    box-shadow: none;
+    color: #16c65b;
+}
+
+.secondary-auth-link,
+.back-home {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.secondary-auth-link {
+    color: #16c65b;
+    font-weight: 600;
+}
+
+.back-home {
+    color: #777;
+    font-size: 14px;
+}

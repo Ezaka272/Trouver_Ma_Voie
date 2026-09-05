@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxiBe | Carte du trajet</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="assets/css/carte.css">
+    <link rel="stylesheet" href="assets/css/settings-theme.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/assets/js/i18n.js" defer></script>
+<script src="assets/js/user-common.js" defer></script>
+    <script src="assets/js/carte.js" defer></script>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a href="javascript:history.back()" class="back" aria-label="Retour">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="topbar-title">
+        <span class="topbar-kicker">Trouver Ma Voie</span>
+        <h1>Carte du trajet</h1>
+    </div>
+
+    <button id="recenterBtn" class="icon-btn" type="button" title="Recentrer la carte">
+        <i class="fa-solid fa-crosshairs"></i>
+    </button>
+</header>
+
+<main class="map-page">
+
+    <section class="map-wrapper">
+        <div id="map"></div>
+
+        <div class="map-floating-card">
+            <div class="line-badge" id="numeroLigne">--</div>
+            <div class="line-details">
+                <strong id="titreTrajet">Chargement...</strong>
+                <span id="prixTemps">--</span>
+            </div>
+        </div>
+
+        <div class="map-legend">
+            <div class="legend-title">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Légende</span>
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-marker legend-start">D</span>
+                <span>Départ</span>
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-marker legend-stop">1</span>
+                <span>Arrêt</span>
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-marker legend-end">A</span>
+                <span>Destination</span>
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-line"></span>
+                <span>Itinéraire</span>
+            </div>
+        </div>
+
+        <button id="toggleStops" class="stops-toggle" type="button">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Voir les arrêts</span>
+        </button>
+    </section>
+
+    <section class="stops-panel" id="stopsPanel">
+
+        <div class="panel-header">
+            <div>
+                <span class="panel-kicker">Itinéraire</span>
+                <h2>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Arrêts de la ligne
+                </h2>
+            </div>
+
+            <span class="stop-count" id="stopCount">0 arrêts</span>
+        </div>
+
+        <div class="route-summary">
+            <div class="route-point start-point">
+                <span class="point-icon">D</span>
+                <div>
+                    <small>Départ</small>
+                    <strong id="startName">--</strong>
+                </div>
+            </div>
+
+            <div class="route-line"></div>
+
+            <div class="route-point end-point">
+                <span class="point-icon">A</span>
+                <div>
+                    <small>Destination</small>
+                    <strong id="endName">--</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="listeArrets" class="stops-list">
+            <div class="loading-stops">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Chargement des arrêts...
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<nav class="bottom-nav">
+    <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Accueil</span>
+    </a>
+
+    <a href="resultat.html">
+        <i class="fa-solid fa-route"></i>
+        <span>Trajets</span>
+    </a>
+
+    <a href="lignes.html">
+<i class="fa-solid fa-road"></i>
+Lignes
+</a>
+
+<a href="favoris.html">
+        <i class="fa-regular fa-heart"></i>
+        <span>Favoris</span>
+    </a>
+
+    <a href="profil.html">
+        <i class="fa-regular fa-user"></i>
+        <span>Profil</span>
+    </a>
+</nav>
+
+</body>
+</html>
