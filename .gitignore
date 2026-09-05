@@ -1,3 +1,2 @@
 .env
-uploads/profils/*
-!uploads/profils/.gitkeep
+package.json
